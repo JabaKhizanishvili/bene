@@ -57,7 +57,7 @@ use Spatie\Searchable\SearchResult;
  */
 class News extends Model implements Searchable
 {
-    use SoftDeletes, Translatable, HasFactory, ScopeFilter;
+    use Translatable, HasFactory, ScopeFilter;
 
     /**
      * @var string
@@ -139,5 +139,4 @@ class News extends Model implements Searchable
     {
         return $this->morphOne(File::class, 'fileable');
     }
-
 }

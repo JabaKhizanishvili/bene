@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  app/Http/Requests/Admin/ProductRequest.php
  *
@@ -41,9 +42,9 @@ class NewsRequest extends FormRequest
         }
 
         return [
-            'slug' => ['required', 'alpha_dash', Rule::unique('products', 'slug')->ignore($this->product)],
-            config('translatable.fallback_locale') . '.title' => 'required',
-            config('translatable.fallback_locale') . '.short_description' => 'required|max:255',
+            // 'slug' => ['required', 'alpha_dash', Rule::unique('products', 'slug')->ignore($this->product)],
+            // config('translatable.fallback_locale') . '.title' => 'required',
+            // config('translatable.fallback_locale') . '.short_description' => 'required|max:255',
         ];
     }
 }

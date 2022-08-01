@@ -70,7 +70,7 @@ export const navigations = [
         text: "Portfolio",
     },
     {
-        link: "/news",
+        link: route("client.news.index"),
         text: "News",
     },
     {

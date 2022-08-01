@@ -3798,10 +3798,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var _components_Data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Data */ "./resources/js/components/Data.js");
-/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
-/* harmony import */ var react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-parallax-mouse */ "./node_modules/react-parallax-mouse/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _components_Data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Data */ "./resources/js/components/Data.js");
+/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var react_parallax_mouse__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-parallax-mouse */ "./node_modules/react-parallax-mouse/dist/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -3820,13 +3821,83 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var News = function News() {
+
+
+var News = function News(_ref) {
+  var seo = _ref.seo,
+      news = _ref.news;
+
+  var renderHTML = function renderHTML(rawHTML) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: rawHTML
+      }
+    });
+  };
+
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.localizations;
+
+  var links = function links(_links) {
+    var rows = []; //links.shift();
+    //links.splice(-1);
+
+    {
+      _links.map(function (item, index) {
+        if (index > 0 && index < _links.length - 1) {
+          rows.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+            href: item.url,
+            className: item.active ? "text-custom-pink-500 mx-3 p-2 text-3xl" : " mx-5 text-3xl"
+          }, item.label));
+        }
+      });
+    }
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "nums"
+    }, " ", rows.length > 1 ? rows : null, " ");
+  };
+
+  var linksPrev = function linksPrev(links) {
+    var rowCount = 0;
+    links.map(function (item, index) {
+      if (index > 0 && index < links.length - 1) {
+        rowCount++;
+      }
+    });
+    return rowCount > 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      href: links[0].url
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      className: "arrow",
+      style: {
+        transform: "rotate(-90deg)"
+      }
+    })) : null;
+  };
+
+  var linksNext = function linksNext(links) {
+    var rowCount = 0;
+    links.map(function (item, index) {
+      if (index > 0 && index < links.length - 1) {
+        rowCount++;
+      }
+    });
+    return rowCount > 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      href: links[links.length - 1].url
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      className: "arrow",
+      style: {
+        transform: "rotate(90deg)"
+      }
+    })) : null;
+  };
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState2 = _slicedToArray(_useState, 2),
       hovered = _useState2[0],
       setHovered = _useState2[1];
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    seo: seo
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
     className: "wrapper sm:pt-52 pt-32 py-32"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "uppercase mb-16 sm:text-5xl text-3xl"
@@ -3834,9 +3905,22 @@ var News = function News() {
     className: "flex justify-between items-center flex-col lg:flex-row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "lg:max-w-3xl mb-10 lg:mb-0"
-  }, _components_Data__WEBPACK_IMPORTED_MODULE_1__.news.map(function (item, index) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-      to: item.link,
+  }, news.data.map(function (item, index) {
+    var date = function date() {
+      var z = item.created_at.split("-");
+      z[2] = z[2].split(":");
+      z[2] = z[2][0].slice(0, z[2][0].search("T")); // if (z[1].length == 2 && z[1][0] == 0) {
+      //     z[1] = z[1].slice(1);
+      // }
+      // else {
+      //     return z;
+      // }
+
+      return z;
+    };
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      href: route("client.news.show", item.id),
       onMouseEnter: function onMouseEnter() {
         return setHovered(index);
       },
@@ -3848,24 +3932,24 @@ var News = function News() {
       className: "regular uppercase"
     }, item.title, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
       className: "regular pl-10 text-white opacity-50"
-    }, item.date)), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_4__.FiArrowRight, {
+    }, "".concat(date()[0], " ").concat(date()[1], " ").concat(date()[2]))), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_5__.FiArrowRight, {
       className: "inline-block h-5 w-5"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
       className: "opacity-50 text-justify regular mb-7"
-    }, item.text));
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__.MouseParallaxContainer, {
+    }, item.short_description));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_4__.MouseParallaxContainer, {
     enableCSSTransition: true,
     useWindowMouseEvents: true,
     className: "  h-full lg:w-1/2"
-  }, _components_Data__WEBPACK_IMPORTED_MODULE_1__.news.map(function (img, index) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_2__.MouseParallaxChild, {
+  }, news.data.map(function (img, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_parallax_mouse__WEBPACK_IMPORTED_MODULE_4__.MouseParallaxChild, {
       factorX: -0.05,
       factorY: -0.05,
       className: "".concat(hovered === index ? "block" : "hidden"),
       key: index
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       "data-aos": "zoom-in",
-      src: img.img,
+      src: img.latest_image != null ? "/" + img.latest_image.path + "/" + img.latest_image.title : null,
       alt: "",
       className: "align-middle m-auto ",
       style: {
@@ -3874,13 +3958,9 @@ var News = function News() {
     }));
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper flex items-center justify-center pt-20"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    className: "text-custom-pink-500 mx-3 p-2 text-3xl"
-  }, "1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    className: " mx-5 text-3xl"
-  }, "2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    className: " mx-5 text-3xl"
-  }, "3"))));
+  }, linksPrev(news.links), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: ""
+  }, links(news.links)), linksNext(news.links)))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (News);
@@ -4232,15 +4312,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
  // import img1 from "../assets/images/projects/3.png";
 
 
 
 
-var SingleNews = function SingleNews() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+
+var SingleNews = function SingleNews(_ref) {
+  var seo = _ref.seo,
+      news = _ref.news;
+  console.log(news);
+
+  var date = function date() {
+    var z = news.created_at.split("-");
+    z[2] = z[2].split(":");
+    z[2] = z[2][0].slice(0, z[2][0].search("T")); // if (z[1].length == 2 && z[1][0] == 0) {
+    //     z[1] = z[1].slice(1);
+    // }
+    // else {
+    //     return z;
+    // }
+
+    return z;
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("layout", {
+    seo: seo
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
     className: "py-32 relative wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     style: {
@@ -4251,32 +4352,28 @@ var SingleNews = function SingleNews() {
     className: "fixed left-1/2 -translate-x-1/2 top-40 -z-10 blur-xl  opacity-50"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "text-center uppercase mb-5 text-3xl"
-  }, "winner of a new competition"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, news.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "text-center opacity-50 regular"
-  }, "date: 20.02.2022"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "date: ", "".concat(date()[0], " ").concat(date()[1], " ").concat(date()[2])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "max-w-lg mt-10 mx-auto text-justify"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     className: "mb-5 regular"
-  }, "Design thinking: Adding a single letter creates 92NY, a new shorthand name that shifts the identity away from the world of YMCAs and recommits the institution to the energy of New York. We drew the new abbreviation in a proprietary typeface that will be used across 92NY\u2019s offerings."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-    className: "mb-5 regular"
-  }, " ", "Challenges: It\u2019s a big decision to change a name that\u2019s seemingly been in use for decades, but the previous name, for all its longevity, had many confusing permutations: for example, \u201Cthe Ninety-second Street Y,\u201D \u201CNinety-two Y,\u201D \u201CNine two Y\u201D or even just \u201Cthe Y.\u201D The power of 92NY lies in its simplicity."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+  }, " ", news.short_description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     className: "mb-5 regular"
   }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     className: "w-full",
-    src: '/assets/images/projects/3.png',
-    alt: ""
+    src: news.latest_image != null ? "/" + news.latest_image.path + "/" + news.latest_image.title : null,
+    alt: "err"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     className: "mb-5 regular"
-  }, "Favorite details: Type designer Jeremy Mickel of type foundry MCKL created the remastered typeface 92NY Didi and based it on several sources we knew and loved, including the 18th-century Deberny & Peignot cut of Didot featured in the font library Lettera, Vol. 1, collected by Armin Haab and Alex Stocker and published in 1954; CBS Didot, created for the eponymous television network in 1966 by designer Freeman Craw; and ITC Didi by designer Tom Carnese, commissioned by the International Typeface Corporation in 1970. Starting with a sensuous pair of numbers like 9 and 2 and the crisp verticals and diagonals of the N and Y, Jeremy created a typeface both classic and modern."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-    className: "mb-5 regular"
-  }, "New lessons: You can rent rooms at 92NY, and Harry Connick Jr. lived there when he first moved to New York at age eighteen.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, news.description)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "text-center mt-20"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    to: "/news",
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    href: route("client.news.index"),
     className: "regular text-center mx-auto"
-  }, "Back to news ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_2__.FiArrowLeft, {
+  }, "Back to news ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__.FiArrowLeft, {
     className: "inline-block h-5 w-5"
-  })))));
+  }))))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleNews);
@@ -4616,7 +4713,7 @@ var navigations = [{
   link: "/portfolio",
   text: "Portfolio"
 }, {
-  link: "/news",
+  link: route("client.news.index"),
   text: "News"
 }, {
   link: route("client.contact.index"),

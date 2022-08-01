@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  app/Repositories/ProductRepositoryInterface.php
  *
@@ -6,6 +7,7 @@
  * Time: 10:35
  * @author Insite.ge
  */
+
 namespace App\Repositories;
 
 
@@ -15,12 +17,4 @@ use Illuminate\Http\Request;
 
 interface NewsRepositoryInterface
 {
-
-    /**
-     * @param ProductRequest $request
-     * @param array $with
-     *
-     * @return mixed
-     */
-    public function getData(Request $request, array $with = []);
 }

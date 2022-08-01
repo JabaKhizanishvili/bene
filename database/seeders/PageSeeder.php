@@ -27,25 +27,7 @@ class PageSeeder extends Seeder
                 'key' => 'contact'
             ],
             [
-                'key' => 'partners'
-            ],
-            [
-                'key' => 'tiles'
-            ],
-            [
-                'key' => 'tiles2'
-            ],
-            [
-                'key' => 'laminate'
-            ],
-            [
-                'key' => 'doors'
-            ],
-            [
-                'key' => 'bathroom'
-            ],
-            [
-                'key' => 'irons'
+                'key' => 'news'
             ],
             [
                 'key' => 'singleproduct'

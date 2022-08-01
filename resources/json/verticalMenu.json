@@ -82,8 +82,8 @@
             "slug": "page"
         },
         {
-            "url": "iron.index",
-            "name": "Irons",
+            "url": "news.index",
+            "name": "news",
             "i18n": "page",
             "icon": "language",
             "slug": "page"

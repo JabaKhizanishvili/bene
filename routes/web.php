@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\OwnerAppController;
 use App\Http\Controllers\Admin\EvaluationController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\TranslationController;
 use App\Http\Controllers\CKEditorController;
@@ -49,6 +50,10 @@ Route::prefix('{locale?}')
                 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
                 Route::redirect('', 'adminpanel/page');
+
+                //news
+                Route::resource('news', NewsController::class);
+                Route::get('news/{news}/destroy', [NewsController::class, 'destroy'])->name('news.destroy');
 
                 // Language
                 Route::resource('language', LanguageController::class);
@@ -142,6 +147,11 @@ Route::prefix('{locale?}')
             Route::get('singleproduct', [TilesController::class, 'singleproduct'])->name('client.singleproduct.index');
             Route::get('/singleproduct/{singleproduct}', [\App\Http\Controllers\Client\TilesController::class, 'show'])->name('client.singleproduct.show')->withoutMiddleware('active');
 
+
+
+            //news
+            Route::get('/news', [\App\Http\Controllers\Client\NewsController::class, 'index'])->name('client.news.index');
+            Route::get('/news/{news}', [\App\Http\Controllers\Client\NewsController::class, 'show'])->name('client.news.show');
 
             //search
 
