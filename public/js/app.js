@@ -3149,6 +3149,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 /* harmony import */ var _components_Data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Data */ "./resources/js/components/Data.js");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -3171,13 +3172,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var About = function About() {
+
+var About = function About(_ref) {
+  var seo = _ref.seo;
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
       _useState2 = _slicedToArray(_useState, 2),
       activeLink = _useState2[0],
       setActiveLink = _useState2[1];
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    seo: seo
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", {
     className: "relative"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     "data-aos": "zoom-in-up"
@@ -3293,7 +3299,7 @@ var About = function About() {
     className: " mx-5 text-3xl"
   }, "2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", {
     className: " mx-5 text-3xl"
-  }, "3"))));
+  }, "3")))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (About);
@@ -3311,22 +3317,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
-/* harmony import */ var _components_Data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Data */ "./resources/js/components/Data.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
+/* harmony import */ var _components_Data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Data */ "./resources/js/components/Data.js");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 
 
 
-var Contact = function Contact() {
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("section", {
+
+
+var Contact = function Contact(_ref) {
+  var seo = _ref.seo;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    seo: seo
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
     className: "relative overflow-hidden"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "overlay relative "
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "map lg:absolute lg:top-0 lg:left-0 w-screen lg:h-full h-96",
     style: {
       filter: "grayscale(100%) invert(99%) contrast(99%)"
     }
-  }, /*#__PURE__*/React.createElement("iframe", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("iframe", {
     src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.730590871275!2d44.76043011567813!3d41.72633198287671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404472e00f27011f%3A0x6e479c2aeffe1b8!2s15%20Alexander%20Kazbegi%20Ave%2C%20T'bilisi!5e0!3m2!1sen!2sge!4v1659016276718!5m2!1sen!2sge",
     width: "100%",
     height: "100%",
@@ -3336,76 +3349,76 @@ var Contact = function Contact() {
     allowFullScreen: "",
     loading: "lazy",
     referrerPolicy: "no-referrer-when-downgrade"
-  })), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "right-shadow"
-  }), /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper flex flex-col lg:flex-row justify-between lg:items-end items-start h-full pb-20"
-  }, /*#__PURE__*/React.createElement("h1", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
     "data-aos": "fade-right",
     className: "uppercase text-5xl z-30 mb-10  lg:mb-0"
-  }, "Contact us"), /*#__PURE__*/React.createElement("form", {
+  }, "Contact us"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
     "data-aos": "zoom-in-up",
     className: "relative z-30 w-full lg:w-auto"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "text-3xl uppercase text-custom-pink-500 mb-5"
-  }, "get in touch"), /*#__PURE__*/React.createElement("div", {
+  }, "get in touch"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "opacity-50 mb-5"
-  }, "Have some questions? ", /*#__PURE__*/React.createElement("br", null), "feel free to ask them anytime"), /*#__PURE__*/React.createElement("input", {
+  }, "Have some questions? ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "feel free to ask them anytime"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     className: "bg-transparent border-b  block h-10 mb-7 sm:w-96 w-full placeholder:text-white regular outline-0",
     type: "text",
     placeholder: "Name"
-  }), /*#__PURE__*/React.createElement("input", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     className: "bg-transparent border-b  block h-10 mb-7 sm:w-96 w-full placeholder:text-white regular outline-0",
     type: "text",
     placeholder: "Email"
-  }), /*#__PURE__*/React.createElement("input", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     className: "bg-transparent border-b  block h-10 mb-7 sm:w-96 w-full placeholder:text-white regular outline-0",
     type: "text",
     placeholder: "Phone"
-  }), /*#__PURE__*/React.createElement("textarea", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", {
     className: "bg-transparent border-b  block h-10 mb-10 sm:w-96 w-full placeholder:text-white regular outline-0",
     placeholder: "Message"
-  }), /*#__PURE__*/React.createElement("button", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     className: "regular"
-  }, "Send message ", /*#__PURE__*/React.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_1__.FiArrowRight, {
+  }, "Send message ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__.FiArrowRight, {
     className: "inline-block h-5 w-5"
-  })))))), /*#__PURE__*/React.createElement("footer", {
+  })))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("footer", {
     className: "grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 wrapper lg:gap-10 gap-5 lg:pb-32 pb-20 pt-10"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "opacity-50 lg:mb-5 mb-2 regular"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "h-px bg-white w-5 inline-block pr-2 align-middle"
-  }), " ", "address"), /*#__PURE__*/React.createElement("div", {
+  }), " ", "address"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "regular"
-  }, _components_Data__WEBPACK_IMPORTED_MODULE_0__.contactInfo.location)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  }, _components_Data__WEBPACK_IMPORTED_MODULE_1__.contactInfo.location)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "opacity-50 lg:mb-5 mb-2 regular"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "h-px bg-white w-5 inline-block pr-2 align-middle"
-  }), " ", "phone"), /*#__PURE__*/React.createElement("div", {
+  }), " ", "phone"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "regular"
-  }, _components_Data__WEBPACK_IMPORTED_MODULE_0__.contactInfo.location)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  }, _components_Data__WEBPACK_IMPORTED_MODULE_1__.contactInfo.location)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "opacity-50 lg:mb-5 mb-2 regular"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "h-px bg-white w-5 inline-block pr-2 align-middle"
-  }), " ", "email"), /*#__PURE__*/React.createElement("div", {
+  }), " ", "email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "regular"
-  }, _components_Data__WEBPACK_IMPORTED_MODULE_0__.contactInfo.location)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  }, _components_Data__WEBPACK_IMPORTED_MODULE_1__.contactInfo.location)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "opacity-50 lg:mb-5 mb-2 regular"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "h-px bg-white w-5 inline-block pr-2 align-middle"
-  }), " ", "social"), /*#__PURE__*/React.createElement("div", {
+  }), " ", "social"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: " flex items-center justify-start "
-  }, _components_Data__WEBPACK_IMPORTED_MODULE_0__.socialMedia.map(function (sm, index) {
-    return /*#__PURE__*/React.createElement("a", {
+  }, _components_Data__WEBPACK_IMPORTED_MODULE_1__.socialMedia.map(function (sm, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
       href: sm.link,
       key: index,
       className: "mr-5"
-    }, /*#__PURE__*/React.createElement("img", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       src: sm.icon,
       alt: "",
       className: "h-5"
     }));
-  })))));
+  }))))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Contact);
@@ -4594,10 +4607,10 @@ var contactInfo = {
 var partners = ['/assets/images/partners/1.png', '/assets/images/partners/2.png', '/assets/images/partners/3.png', '/assets/images/partners/4.png', '/assets/images/partners/5.png', '/assets/images/partners/6.png', '/assets/images/partners/7.png', '/assets/images/partners/8.png', '/assets/images/partners/1.png', '/assets/images/partners/2.png']; // navbar
 
 var navigations = [{
-  link: "/",
+  link: route("client.home.index"),
   text: "Home"
 }, {
-  link: "/about",
+  link: route("client.aboutus"),
   text: "About us"
 }, {
   link: "/portfolio",
@@ -4606,7 +4619,7 @@ var navigations = [{
   link: "/news",
   text: "News"
 }, {
-  link: "/contact",
+  link: route("client.contact.index"),
   text: "Contact us"
 }]; // social media
 
@@ -4937,12 +4950,12 @@ var Navbar = function Navbar() {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "".concat(indexHovered === 3 ? "visible opacity-100 translate-y-0" : "invisible opacity-0 -translate-y-full", " absolute right-0 top-0 flex items-center justify-center h-full transition duration-700  w-auto ")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: '/assets/images/navbar/8.png',
+    src: '/assets/images/navbar/3.png',
     alt: ""
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "".concat(indexHovered === 4 ? "visible opacity-100 " : "invisible opacity-0 ", " fixed right-0 top-0 flex items-center justify-center w-screen h-screen transition duration-700 ")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: '/assets/images/navbar/3.png',
+    src: '/assets/images/navbar/4.png',
     alt: "",
     className: "fixed right-0 bottom-0 w-auto  -z-10 "
   })))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4950,7 +4963,7 @@ var Navbar = function Navbar() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper flex justify-between items-center py-3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: "/"
+    href: route("client.home.index")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: '/assets/images/logo/1.png',
     alt: ""

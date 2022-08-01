@@ -112,7 +112,7 @@ const Navbar = () => {
                                     : "invisible opacity-0 -translate-y-full"
                                     } absolute right-0 top-0 flex items-center justify-center h-full transition duration-700  w-auto `}
                             >
-                                <img src={'/assets/images/navbar/8.png'} alt="" />
+                                <img src={'/assets/images/navbar/3.png'} alt="" />
                             </div>
                             <div
                                 className={`${indexHovered === 4
@@ -121,7 +121,7 @@ const Navbar = () => {
                                     } fixed right-0 top-0 flex items-center justify-center w-screen h-screen transition duration-700 `}
                             >
                                 <img
-                                    src={'/assets/images/navbar/3.png'}
+                                    src={'/assets/images/navbar/4.png'}
                                     alt=""
                                     className="fixed right-0 bottom-0 w-auto  -z-10 "
                                 />
@@ -137,7 +137,7 @@ const Navbar = () => {
                     } left-0 top-0 w-full z-50`}
             >
                 <div className="wrapper flex justify-between items-center py-3">
-                    <Link href="/">
+                    <Link href={route("client.home.index")}>
                         <img src={'/assets/images/logo/1.png'} alt="" />
                     </Link>
                     <button

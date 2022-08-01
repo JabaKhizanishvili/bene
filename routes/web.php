@@ -138,36 +138,13 @@ Route::prefix('{locale?}')
             // partners page
             Route::get('partners', [LoginPageController::class, 'partners'])->name('client.partners.index');
 
-            //tiles
-            Route::get('tiles', [TilesController::class, 'index'])->name('client.tiles.index')->withoutMiddleware('active');
-            //tiles2
-            Route::get('tiles2', [TilesController::class, 'tiles2'])->name('client.tiles2.index')->withoutMiddleware('active');
-            //tiles3
-            Route::get('tiles3', [TilesController::class, 'tiles3'])->name('client.tiles3.index')->withoutMiddleware('active');
-            // doors
-            Route::get('doors', [TilesController::class, 'doors'])->name('client.doors.index')->withoutMiddleware('active');
-            //bathroom
-            Route::get('bathroom', [TilesController::class, 'bathroom'])->name('client.bathroom.index')->withoutMiddleware('active');
             //singleproduct
             Route::get('singleproduct', [TilesController::class, 'singleproduct'])->name('client.singleproduct.index');
             Route::get('/singleproduct/{singleproduct}', [\App\Http\Controllers\Client\TilesController::class, 'show'])->name('client.singleproduct.show')->withoutMiddleware('active');
 
-            //irons
-            Route::get('metalprofiles', [IronController::class, 'index'])->name('client.metalprofiles.index')->withoutMiddleware('active');
-            Route::get('metalmiles', [IronController::class, 'mile'])->name('client.mile.index')->withoutMiddleware('active');
-            Route::get('metalpaper', [IronController::class, 'metalpaper'])->name('client.metalpaper.index')->withoutMiddleware('active');
-            Route::get('metalpaper1', [IronController::class, 'metalpaper1'])->name('client.metalpaper.index1')->withoutMiddleware('active');
-            Route::get('metalpaper2', [IronController::class, 'metalpaper2'])->name('client.metalpaper.index2')->withoutMiddleware('active');
-            Route::get('ortisebri', [IronController::class, 'ortisebri'])->name('client.ortisebri.index')->withoutMiddleware('active');
-            Route::get('shveleri', [IronController::class, 'shveleri'])->name('client.shveleri.index')->withoutMiddleware('active');
-            Route::get('kutxovana', [IronController::class, 'kutxovana'])->name('client.kutxovana.index')->withoutMiddleware('active');
-            Route::get('zolovana', [IronController::class, 'zolovana'])->name('client.zolovana.index')->withoutMiddleware('active');
-            Route::get('kvadrati', [IronController::class, 'kvadrati'])->name('client.kvadrati.index')->withoutMiddleware('active');
-            Route::get('granula', [IronController::class, 'granula'])->name('client.granula.index')->withoutMiddleware('active');
-            Route::get('armatura', [IronController::class, 'armatura'])->name('client.armatura.index')->withoutMiddleware('active');
 
             //search
 
-            Route::get('search', [TilesController::class, 'search'])->name('client.search.index')->withoutMiddleware('active');
+            // Route::get('search', [TilesController::class, 'search'])->name('client.search.index')->withoutMiddleware('active');
         });
     });

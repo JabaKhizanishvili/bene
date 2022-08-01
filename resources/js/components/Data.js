@@ -58,11 +58,11 @@ export const partners = [
 // navbar
 export const navigations = [
     {
-        link: "/",
+        link: route("client.home.index"),
         text: "Home",
     },
     {
-        link: "/about",
+        link: route("client.aboutus"),
         text: "About us",
     },
     {
@@ -74,7 +74,7 @@ export const navigations = [
         text: "News",
     },
     {
-        link: "/contact",
+        link: route("client.contact.index"),
         text: "Contact us",
     },
 ];

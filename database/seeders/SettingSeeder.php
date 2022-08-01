@@ -22,6 +22,18 @@ class SettingSeeder extends Seeder
             [
                 'key' => 'address'
             ],
+            [
+                'key' => 'email'
+            ],
+            [
+                'key' => 'facebook'
+            ],
+            [
+                'key' => 'twitter'
+            ],
+            [
+                'key' => 'instagram'
+            ],
         ];
 
         // Insert Settings
