@@ -9,7 +9,8 @@ import { partners, team } from "../components/Data";
 import { projectLinks } from "../components/Data";
 import Layout from "../Layouts/Layout";
 
-const About = ({ seo }) => {
+const About = ({ seo, partners }) => {
+    console.log(partners);
     const [activeLink, setActiveLink] = useState(0);
     return (
         <Layout seo={seo}>
@@ -97,7 +98,16 @@ const About = ({ seo }) => {
                                     className="opacity-50 hover:opacity-100 transition-all duration-300"
                                     key={index}
                                 >
-                                    <img src={partner} className="max-h-12 m-auto" alt="" />
+                                    <img src={
+                                        partner.latest_image != null
+                                            ? "/" +
+                                            partner.latest_image
+                                                .path +
+                                            "/" +
+                                            partner.latest_image
+                                                .title
+                                            : null
+                                    } className="max-h-12 m-auto" alt="err" />
                                 </SwiperSlide>
                             );
                         })}

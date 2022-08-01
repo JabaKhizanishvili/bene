@@ -158,6 +158,7 @@ class LoginPageController extends Controller
         //dd($products);
 
         return Inertia::render('About', [
+            "partners" => Staff::with('latestImage')->get(),
             'success' => $request->session()->get('success'),
             "sliders" => $sliders->get(), "page" => $page, "seo" => [
                 "title" => $page->meta_title,

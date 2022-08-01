@@ -3174,7 +3174,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var About = function About(_ref) {
-  var seo = _ref.seo;
+  var seo = _ref.seo,
+      partners = _ref.partners;
+  console.log(partners);
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
       _useState2 = _slicedToArray(_useState, 2),
@@ -3241,14 +3243,14 @@ var About = function About(_ref) {
         slidesPerView: 8
       }
     }
-  }, _components_Data__WEBPACK_IMPORTED_MODULE_5__.partners.map(function (partner, index) {
+  }, partners.map(function (partner, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(swiper_react__WEBPACK_IMPORTED_MODULE_2__.SwiperSlide, {
       className: "opacity-50 hover:opacity-100 transition-all duration-300",
       key: index
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", {
-      src: partner,
+      src: partner.latest_image != null ? "/" + partner.latest_image.path + "/" + partner.latest_image.title : null,
       className: "max-h-12 m-auto",
-      alt: ""
+      alt: "err"
     }));
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", {
     className: "wrapper py-24 text-center"
